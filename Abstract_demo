@@ -1,0 +1,38 @@
+abstract class Writer
+{
+	abstract void write();
+	
+}
+class Pen extends Writer
+{
+	void write()
+	{
+		System.out.println("in pen writer");
+	}
+}
+class Pencil extends Writer
+{
+	void write()
+	{
+		System.out.println("in pancil writer");
+	}
+}
+class Kit
+{
+	void picker(Writer r)
+	{
+		r.write();
+	}
+}
+public class AbstractDemo {
+
+	public static void main(String[] args) 
+	{
+		Writer p=new Pen();
+		Kit k=new Kit();
+		Writer pc=new Pencil();
+		k.picker(p);
+		k.picker(pc);
+	}
+
+}
