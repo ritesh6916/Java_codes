@@ -1,0 +1,26 @@
+interface StaticInterface
+{
+	void name();
+	static void show()
+	{
+		System.out.println("I am static mathod in interface");
+	}
+	
+}
+public class StaticInterfaceDemo {
+
+	public static void main(String[] args) 
+	{
+		StaticInterface s=new StaticInterface()
+				{
+			public void name()
+			{
+				System.out.println("I am Ritesh singh");
+			}
+			
+				};
+		s.name();
+		StaticInterface.show();
+	}
+
+}
