@@ -1,0 +1,40 @@
+interface Demo1
+{
+	void name();
+	default void about()
+	{
+		System.out.println("default keyword can be used in interface methods to define them in interface ");
+	}
+	default void over()
+	{
+		System.out.println(" over of Demo interface");
+	}
+}
+interface MyDemo
+{
+	default void over()
+	{
+		System.out.println("over of MyDemo interface");
+	}
+}
+class ImplementInterface implements Demo1, MyDemo
+{
+	public void over()
+	{
+		Demo1.super.over();
+		System.out.println(" over of class");
+	}
+	public void name()
+	{
+		System.out.println("definition of name method");
+	}
+}
+public class DefaultMethodInterface 
+{
+	public static void main(String[] args) 
+	{
+		ImplementInterface im=new ImplementInterface();
+		im.over();
+		im.name();
+	}
+}
