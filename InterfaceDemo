@@ -1,0 +1,71 @@
+interface Human
+{
+	void walk();
+	void eat();
+	
+}
+class HumanBeing
+{
+	void hair()
+	{
+		System.out.println("both hava theri own hairstyle");
+	}
+}
+class Male extends HumanBeing implements Human   //a class can extends and implements at the same time in given order
+{
+	public void walk()   					//must be defined public because it is by default public in interface
+	{
+		System.out.println("male is walking");
+	}
+	public void eat()
+	{
+		System.out.println("male is eating");
+	}
+	void hair()
+	{
+		System.out.println("male generally short hair");
+	}
+}
+class Female extends HumanBeing implements Human 
+{
+	public void walk()
+	{
+		System.out.println("Female is walking");
+	}
+	public void eat()
+	{
+		System.out.println("Female is eating");
+	}
+	void hair()
+	{
+		super.hair();
+		System.out.println("Female hair is generally long");
+	}
+}
+class Child extends HumanBeing
+{
+	void birth(Human h)
+	{
+		h.walk();
+		h.eat();
+	}
+	void birth(HumanBeing hb)
+	{
+		hb.hair();
+	}
+}
+class InterfaceDemo
+{
+	public static void main(String[] args) 
+	{
+		Human m=new Male();
+		Human f=new Female();
+		HumanBeing hm=new Male();
+		HumanBeing hf=new Female();
+		Child c=new Child();
+		c.birth(m);
+		c.birth(f);
+		c.birth(hm);
+		c.birth(hf);
+	}
+}
